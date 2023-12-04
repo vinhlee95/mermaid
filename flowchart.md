@@ -21,8 +21,7 @@ flowchart LR
   frontend --> authCond
   
   authCond -- has token --> backend
-  authCond -- does not have token 
-  or token expired --> exitFlow(Exit flow - redirect to login)
+  authCond -- does not have token or token expired --> exitFlow(Exit flow - redirect to login)
   
 subgraph Backend
   backend
@@ -30,9 +29,7 @@ subgraph Backend
 
   direction TB
   backend -- fetch cart contents --> session
-  session -- cart contents:
-  phone
-  shipping method --> backend
+  session -- cart contents <br/> phone <br/> shipping method --> backend
 end
 
 
